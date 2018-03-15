@@ -1,0 +1,36 @@
+agm-map {
+    height: 500px;
+  }
+  h3 {
+      font-size:42px;
+  }
+  h1{
+      font-size:70px;
+  }
+.white_text{
+    color:white;
+}
+.bg_image{
+    background-image: url("../assets/images/Background.png");
+}
+.form-style{
+     padding:0% 0% 18% 0%;  
+}
+.text-align-center{
+    text-align:center;
+}
+.btn-block{
+    padding: 10px 50px;
+}
+.forgot{
+    float:right;
+}
+.forgot a{
+    color:white;
+    text-decoration: underline;
+}
+.forgot a:hover{
+    color:blue;
+   
+}
+
