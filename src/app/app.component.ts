@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component , OnInit } from '@angular/core';
+import {ServiceRequest} from './services/base.http.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+
+  constructor (private httpSvc: ServiceRequest) {}
+
+  ngOnInit() {
+      this.httpSvc.testGetMethod().subscribe(data => {
+      //  console.log('test http', data);
+      },
+        (err) => {
+          console.log('Error', err);
+        }
+    );
+  }
 }
