@@ -1,0 +1,12 @@
+
+.footerStyl {
+  background: #0486c1;
+  color: white;
+  font-size: 18px;
+  padding: 2vh;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+

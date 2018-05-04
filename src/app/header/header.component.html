@@ -1,0 +1,32 @@
+<div class="mycontainer">
+    <nav>
+      <span>
+        <img src="../../assets/Logo.png" class="logoStyle">
+      </span>
+      <span class="headers">
+        <span *ngFor="let label of heading">
+          <span>
+            <img src="{{label.img}}" class="imgStyl">
+          </span>
+          <span class="titleStyle">&nbsp;{{label.title}}</span>
+        </span>
+      </span>
+      <span class="logout">
+        <span class="titleStyling">Hello,</span>
+        <span class="userName">Nick</span>
+        <span>
+          <img src="../../assets/Bus.png" class="userProfile">
+        </span>
+        <span class="settingPos">
+          <img src="../../assets/settings.png" class="logoutStyle">
+        </span>
+      </span>
+    </nav>
+
+    <div class="overview">
+     <span style="font-weight: bold;">OVERVIEW</span>&nbsp;&nbsp;|
+     <span>ALL VEHICLES</span>
+    </div>
+</div>
+
+

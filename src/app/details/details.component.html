@@ -1,0 +1,12 @@
+<div class="positionStyl">
+<img src="../../assets/Search.png">
+<input type="search" placeholder="Search Vehicles" class="searchStyl">
+</div>
+
+<div *ngFor="let item of MockData" class="listPos">
+  <div class="listStyl">{{item.title}}:</div>
+  <div class="listCount">{{item.count}}</div>
+</div>
+
+<div class="vl"></div>
+

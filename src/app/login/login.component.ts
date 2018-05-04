@@ -1,4 +1,5 @@
 import { Component , OnInit } from '@angular/core';
+import {AppRouteConfig} from '../app.router-config';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +8,12 @@ import { Component , OnInit } from '@angular/core';
 })
 export class LoginComponent {
 
-  constructor () {}
+  constructor (private goto: AppRouteConfig) {}
+
+  login() {
+   console.log('navigate to home');
+    this.goto.gotoPage('home');
+  }
 
 
 }

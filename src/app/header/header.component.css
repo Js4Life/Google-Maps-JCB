@@ -1,0 +1,66 @@
+.logoStyle {
+  width: 15vh;
+  margin-left: 1vh;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+
+.headers {
+  margin-left: 15%;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.imgStyl {
+  width: 15px;
+  object-fit: fill
+}
+
+.titleStyle {
+  color: #0099CC;
+  font-size: 20px;
+  padding-right: 5vh;
+  font-weight: 600;
+}
+
+.logout {
+  float: right;
+  margin-right: 2vh;
+  margin-top: 3vh;
+}
+
+
+.logoutStyle {
+  width: 30px;
+}
+
+.titleStyling {
+  color: grey;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.userName {
+font-family: sans-serif;
+color: red;
+font-size: 15px;
+font-family: Arial, Helvetica, sans-serif;
+font-weight: 700;
+}
+
+.userProfile {
+  width: 30px;
+}
+
+.settingPos {
+  margin-left: 4vh;
+}
+
+.overview {
+  width: 100%;
+  background:  #0486c1;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 4vh;
+  /* font-weight: bold; */
+}
