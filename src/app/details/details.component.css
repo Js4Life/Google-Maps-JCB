@@ -3,7 +3,9 @@ border: 0;
 outline: 0;
 background: transparent;
 border-bottom: 1px solid transparent;
-width: 12%;
+margin-left: 1vh;
+font-family: Arial, Helvetica, sans-serif;
+color: blue;
 }
 
 .fa {
@@ -12,10 +14,11 @@ width: 12%;
 }
 
 ::placeholder {
-  color:blue;
-  opacity: 0.5;
+  color:#2196F3;
+  /* opacity: 0.5; */
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .positionStyl {
@@ -45,10 +48,65 @@ width: 12%;
   border-left: 1px solid grey;
   height: 70vh;
   position: absolute;
-  margin-top: -50vh;
-  margin-left: 34vh;
+  margin-left: 55vh;
+  margin-top: -6vh;
+}
+
+.addrStyl {
+  text-overflow: ellipsis;
+  white-space: initial;
+  width: 51vh;
+}
+
+.busNo {
+  color: #2196F3;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 2vh;
+  font-size: 14px;
+  margin-left: 2vh;
+  font-weight: 500;
+}
+
+.addrStyle {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  margin-left: 2vh;
 }
 
 
 
 
+.movingStyl {
+  position: absolute;
+  margin-left: 40vh;
+  margin-top: -8vh;
+
+}
+
+.logoStyl {
+  width: 4vh;
+  border-radius: 50%;
+}
+.logotitle {
+  margin-top: 1vh;
+  margin-left: -1vh;
+}
+
+.city {
+  margin-left: 2vh;
+}
+
+a {
+  margin-left: 2vh;
+}
+
+.lineStyl {
+  margin-top: 1vh;
+  border: 1px solid grey;
+  width: 53vh;
+}
+
+.searchIcon {
+  width: 3vh;
+  margin-top: -1vh;
+}

@@ -1,12 +1,27 @@
 <div class="positionStyl">
-<img src="../../assets/Search.png">
-<input type="search" placeholder="Search Vehicles" class="searchStyl">
+    <img src="../../assets/Search.png" class="searchIcon">
+<input type="search" placeholder="Search Vehicles" class="searchStyl" style="width: 12%;">
 </div>
+<div class="vl"></div>
 
+
+<div *ngIf="Overview">
 <div *ngFor="let item of MockData" class="listPos">
   <div class="listStyl">{{item.title}}:</div>
   <div class="listCount">{{item.count}}</div>
 </div>
+</div>
 
-<div class="vl"></div>
-
+<div *ngIf="!Overview">
+<div *ngFor="let val of AllVehicles">
+  <div class="busNo">{{val.title}}</div>
+  <div class="addrStyle"><img src="../../assets/Location.png">{{val.location}}<div>
+    <div class="city">{{val.city}}</div>
+    <a href="#">View Details</a>
+  <div class="movingStyl">
+    <img src="{{val.icon}}" class="logoStyl">
+    <div class="logotitle">{{val.status | uppercase}}</div>
+  </div>
+ <div class="lineStyl"></div>
+</div>
+</div>
