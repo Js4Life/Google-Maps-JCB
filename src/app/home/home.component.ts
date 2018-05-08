@@ -1,5 +1,6 @@
-import { Component , OnInit } from '@angular/core';
-import {AppRouteConfig} from '../app.router-config';
+import { Component, OnInit } from '@angular/core';
+import { AppRouteConfig } from '../app.router-config';
+
 
 @Component({
   selector: 'app-home',
@@ -8,11 +9,12 @@ import {AppRouteConfig} from '../app.router-config';
 })
 export class HomeComponent {
   toggle: boolean;
-  constructor (private goto: AppRouteConfig) {}
+
+  constructor(private goto: AppRouteConfig) { }
 
   recieveEvent($event) {
-    console.log($event);
     this.toggle = $event;
   }
-
 }
+
+
