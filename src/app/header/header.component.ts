@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  overview:boolean = true;
 
+@Output() messageEvnt = new EventEmitter<any>();
   heading = [{
     'img': '../../assets/Fleet.png',
     'title': 'Fleet'
@@ -22,5 +24,15 @@ export class HeaderComponent {
 
   constructor() { }
 
+  show() {
+     console.log('show');
+    // this.overview = true;
+    this.messageEvnt.emit(!this.overview);
+  }
+
+  hide() {
+    console.log('hide');
+    this.messageEvnt.emit(this.overview);
+  }
 
 }

@@ -6,13 +6,16 @@ import { LoginComponent } from './login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { DetailsComponent} from './details/details.component';
-import {FooterComponent} from './footer/footer.component'
+import {FooterComponent} from './footer/footer.component';
 // routing
 import {AppRouting} from './app.routes';
 import {AppRouteConfig} from './app.router-config';
 // http Svc
 import { HttpModule } from '@angular/http';
 import {ServiceRequest} from './services/base.http.service';
+
+// Google Maps
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,8 @@ import {ServiceRequest} from './services/base.http.service';
   imports: [
     BrowserModule,
     AppRouting,
-    HttpModule
+    HttpModule,
+    AgmCoreModule.forRoot({apiKey: 'AIzaSyC0_D5WKsaUUnYv9q2AIGwFykqHGVinIlI'})
   ],
   providers: [ServiceRequest, AppRouteConfig],
   bootstrap: [AppComponent]

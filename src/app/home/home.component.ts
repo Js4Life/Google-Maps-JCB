@@ -7,9 +7,12 @@ import {AppRouteConfig} from '../app.router-config';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-
+  toggle: boolean;
   constructor (private goto: AppRouteConfig) {}
 
-
+  recieveEvent($event) {
+    console.log($event);
+    this.toggle = $event;
+  }
 
 }

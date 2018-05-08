@@ -1,18 +1,22 @@
 <div class="positionStyl">
     <img src="../../assets/Search.png" class="searchIcon">
 <input type="search" placeholder="Search Vehicles" class="searchStyl" style="width: 12%;">
+<div class="positionMap">
+  <agm-map [latitude]="lat" [longitude]="lng">
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  </agm-map>
+</div>
 </div>
 <div class="vl"></div>
 
-
-<div *ngIf="Overview">
+<div *ngIf="!Overview">
 <div *ngFor="let item of MockData" class="listPos">
   <div class="listStyl">{{item.title}}:</div>
   <div class="listCount">{{item.count}}</div>
 </div>
 </div>
 
-<div *ngIf="!Overview">
+<div *ngIf="Overview" class="busTrack">
 <div *ngFor="let val of AllVehicles">
   <div class="busNo">{{val.title}}</div>
   <div class="addrStyle"><img src="../../assets/Location.png">{{val.location}}<div>
@@ -25,3 +29,6 @@
  <div class="lineStyl"></div>
 </div>
 </div>
+
+
+

@@ -15,7 +15,6 @@ color: blue;
 
 ::placeholder {
   color:#2196F3;
-  /* opacity: 0.5; */
   font-size: 20px;
   font-weight: 500;
   font-family: Arial, Helvetica, sans-serif;
@@ -34,9 +33,9 @@ color: blue;
 }
 
 .listPos {
-  margin-top: 4vh;
   margin-left: 2vh;
   padding: 2vh;
+  margin-top: -27vh;
 }
 
 .listCount {
@@ -49,7 +48,7 @@ color: blue;
   height: 70vh;
   position: absolute;
   margin-left: 55vh;
-  margin-top: -6vh;
+  margin-top: -70vh;
 }
 
 .addrStyl {
@@ -109,4 +108,17 @@ a {
 .searchIcon {
   width: 3vh;
   margin-top: -1vh;
+}
+
+agm-map  {
+  height: 515px;
+}
+
+.positionMap {
+  margin-left: 53vh;
+  margin-top: -6vh;
+}
+
+.busTrack {
+  margin-top: -62vh;
 }

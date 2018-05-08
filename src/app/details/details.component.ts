@@ -1,13 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation,Input } from '@angular/core';
 import { AppRouteConfig } from '../app.router-config';
 
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
-  styleUrls: ['./details.component.css']
+  styleUrls: ['./details.component.css'],
+  encapsulation : ViewEncapsulation.None
 })
 export class DetailsComponent {
-  Overview:boolean = true;
+  @Input() Overview:boolean = true;
+  lat: number = 51.678418;
+  lng: number = 7.809007;
   constructor(private goto: AppRouteConfig) { }
 
   MockData = [{
@@ -50,8 +53,10 @@ export class DetailsComponent {
   }];
 
 
-  show() {
-    this.Overview = !this.Overview;
-  }
+  // show() {
+  //   this.Overview = !this.Overview;
+  // }
+
+
 
 }
