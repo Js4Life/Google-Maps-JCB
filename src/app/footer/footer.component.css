@@ -10,9 +10,10 @@
   width: 100%;
 }
 
-.iconsStyle {
-  margin-top: 29vh;
+.iconsStyles {
+  /* margin-top: 29vh; */
   margin-left: 175vh;
+  margin-top: 30vh;
 }
 
 .movingStyle {

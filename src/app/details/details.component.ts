@@ -67,7 +67,7 @@ export class DetailsComponent {
     'location': 'Chord Rd,Hampi Nagar,RPC Layout,',
     'city': 'Bengaluru,Karnataka 560104',
     'icon': '../../assets/Stop.png',
-    'status': 'Stop'
+    'status': 'Stopped'
   },{
     'title': 'Bus #3432',
     'location': 'No.193,80 Feet Road,2nd Stage,2nd Block',
