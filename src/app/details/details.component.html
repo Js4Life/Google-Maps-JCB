@@ -1,47 +1,78 @@
 <div class="positionStyl">
-    <img src="../../assets/Search.png" class="searchIcon">
-<input type="search" placeholder="Search Vehicles" class="searchStyl" style="width: 12%;">
+  <img src="../../assets/Search.png" class="searchIcon">
+  <input type="search" placeholder="Search Vehicles" class="searchStyl" style="width: 12%;">
 
-<div class="positionMap">
-  <agm-map [latitude]="lat" [longitude]="lng" (mapClick)="mapClicked($event)">
-    <agm-marker *ngFor="let m of markers; let i = index"
-    (markerClick)="clickedMarker(m.label, i)"
-    [latitude]="m.lat" [longitude]="m.lng"  [label]="m.label"
-    [markerDraggable]="m.draggable"
-    (dragEnd)="markerDragEnd(m, $event)"
-    [iconUrl]="'../../assets/ActiveLT.png'"
-    >
-    <agm-info-window>
-      <strong>InfoWindow content</strong>
-    </agm-info-window>
-  </agm-marker>
-  </agm-map>
-</div>
+  <div class="positionMap">
+    <agm-map [latitude]="lat" [longitude]="lng" (mapClick)="mapClicked($event)">
+      <agm-marker *ngFor="let m of markers; let i = index" (markerClick)="clickedMarker(m.label, i)" [latitude]="m.lat" [longitude]="m.lng"
+        [label]="m.label" [markerDraggable]="m.draggable" (dragEnd)="markerDragEnd(m, $event)" [iconUrl]="'../../assets/ActiveLT.png'">
+        <agm-info-window *ngFor="let item of infoWindow">
+          <div>
+            <img src="{{item.icon}}">
+            <span class="bustxt">{{item.busNo}}</span>
+          </div>
+          <div class="lastSeen">
+            <img src="{{item.mobileIcon}}">
+            <span class="textStyling">{{item.lastseen}}</span>
+          </div>
+          <hr>
+
+          <div>
+
+            <div>
+              <span class="titlePadding">{{item.status}}</span>
+              <span class="titlePadding moveRight">{{item.location}}</span>
+              <div class="textStyl">{{item.statusVal}}</div>
+              <div class="moveRight topMargin textStyl">{{item.locationVal}}</div>
+              <br>
+              <div>
+                <div class="titlePadding">{{item.speed}}</div>
+                <span class="titlePadding moveRight topMargin">{{item.Time}}</span>
+                <div class="textStyl">{{item.speedVal}}</div>
+                <div class="moveRight topMargin textStyl">{{item.TimeVal}}</div>
+
+              </div>
+            </div>
+          </div>
+          <div>
+          </div>
+          <a href="#" style="font-size: 10px;">View Details</a>
+        </agm-info-window>
+
+
+
+      </agm-marker>
+    </agm-map>
+  </div>
 </div>
 
 
 <div class="vl"></div>
 
 <div *ngIf="!Overview">
-<div *ngFor="let item of MockData" class="listPos">
-  <div class="listStyl">{{item.title}}:</div>
-  <div class="listCount">{{item.count}}</div>
-</div>
+  <div *ngFor="let item of MockData" class="listPos">
+    <div class="listStyl">{{item.title}}:</div>
+    <div class="listCount">{{item.count}}</div>
+  </div>
 </div>
 
 <div *ngIf="Overview" class="busTrack">
-<div *ngFor="let val of AllVehicles">
-  <div class="busNo">{{val.title}}</div>
-  <div class="addrStyle"><img src="../../assets/Location.png">{{val.location}}<div>
-    <div class="city">{{val.city}}</div>
-    <a href="#">View Details</a>
-  <div class="movingStyl">
-    <img src="{{val.icon}}" class="logoStyl">
-    <div class="logotitle">{{val.status | uppercase}}</div>
-  </div>
- <div class="lineStyl"></div>
-</div>
-</div>
+    <div class="iconsStyle">
+        <span><img src="../../assets/ActiveLT.png" class="movingStyle">MOVING</span>
+        <span><img src="../../assets/InactiveLT.png" class="movingStyle">STOPPED</span>
+      </div>
+  <div *ngFor="let val of AllVehicles">
+    <div class="busNo">{{val.title}}</div>
+    <div class="addrStyle">
+      <img src="../../assets/Location.png">{{val.location}}
+      <div>
+        <div class="city">{{val.city}}</div>
+        <a href="#" style="margin-left: 2vh;">View Details</a>
+        <div class="movingStyl">
+          <img src="{{val.icon}}" class="logoStyl">
+          <div class="logotitle">{{val.status | uppercase}}</div>
+        </div>
+        <div class="lineStyl"></div>
 
-
-
+      </div>
+    </div>

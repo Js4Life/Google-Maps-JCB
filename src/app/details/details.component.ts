@@ -34,7 +34,7 @@ export class DetailsComponent {
     }
   ];
   constructor(private goto: AppRouteConfig) {
-    
+
    }
 
   MockData = [{
@@ -75,6 +75,22 @@ export class DetailsComponent {
     'icon': '../../assets/Moving.png',
     'status': 'Moving'
   }];
+
+  infoWindow = [
+    {
+      'icon' : '../../assets/Bus.png',
+      'busNo' : 'Bus #3546',
+       'mobileIcon' : '../../assets/smartphone-call.png',
+      'lastseen' : 'Last updated 2m ago',
+      'status' : 'STATUS',
+      'statusVal' : 'Moving',
+      'location' : 'LOCATION',
+      'locationVal': 'Indiranagar',
+      'speed' : 'SPEED',
+      'speedVal': '40km/hr',
+       'Time' : 'TIME',
+       'TimeVal' : '22mins',
+    }];
 
   mapClicked($event: MouseEvent) {
     this.markers.push({

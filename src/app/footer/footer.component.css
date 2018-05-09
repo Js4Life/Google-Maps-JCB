@@ -3,10 +3,18 @@
   background: #0486c1;
   color: white;
   font-size: 18px;
-  padding: 2vh;
+  padding: 1vh;
   text-align: center;
   position: fixed;
   bottom: 0;
   width: 100%;
 }
 
+.iconsStyle {
+  margin-top: 29vh;
+  margin-left: 175vh;
+}
+
+.movingStyle {
+  padding-right: 1vh;
+}

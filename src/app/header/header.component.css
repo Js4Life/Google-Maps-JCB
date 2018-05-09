@@ -12,8 +12,8 @@
 }
 
 .imgStyl {
-  width: 15px;
-  object-fit: fill
+  width: 20px;
+  border-radius: 50%;
 }
 
 .titleStyle {
@@ -61,6 +61,9 @@ font-weight: 700;
   background:  #0486c1;
   color: #fff;
   font-family: Arial, Helvetica, sans-serif;
-  padding: 4vh;
+  padding: 2vh;
   /* font-weight: bold; */
 }
+
+
+
