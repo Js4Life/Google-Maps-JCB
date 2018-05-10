@@ -5,8 +5,8 @@ import { MouseEvent } from '@agm/core';
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
-  styleUrls: ['./details.component.css'],
-  encapsulation : ViewEncapsulation.None
+  styleUrls: ['./details.component.css']
+  // encapsulation : ViewEncapsulation.None
 })
 export class DetailsComponent {
   @Input() Overview: boolean = true;
@@ -38,14 +38,14 @@ export class DetailsComponent {
    }
 
   MockData = [{
-    'title': 'Total Number of Vehicles',
-    'count': 10
+    'title': 'Static or Unknown Vehicle Count',
+    'count': 2
   }, {
-    'title': 'Vehicles Running',
+    'title': 'Running Vehicle Count',
     'count': 5
   }, {
-    'title': 'Overspeeding Vehicles',
-    'count': 2
+    'title': 'Total Vehicle Count',
+    'count': 10
   }];
 
   AllVehicles = [

@@ -36,7 +36,7 @@
           </div>
           <div>
           </div>
-          <a href="#" style="font-size: 10px;">View Details</a>
+          <a  style="font-size: 10px;color:rgb(0, 0, 255);cursor: pointer;text-decoration: underline;">View Details</a>
         </agm-info-window>
 
 
@@ -51,8 +51,7 @@
 
 <div *ngIf="!Overview">
   <div *ngFor="let item of MockData" class="listPos">
-    <div class="listStyl">{{item.title}}:</div>
-    <div class="listCount">{{item.count}}</div>
+    <div class="listStyl">{{item.title}}:<span style="font-weight: bold;">{{item.count}}</span></div>
   </div>
 </div>
 
