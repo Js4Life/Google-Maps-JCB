@@ -16,6 +16,7 @@ import {ServiceRequest} from './services/base.http.service';
 
 // Google Maps
 import { AgmCoreModule } from '@agm/core';
+import {MapComponent} from './maps/map.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AgmCoreModule } from '@agm/core';
     HeaderComponent,
     HomeComponent,
     DetailsComponent,
-    FooterComponent
+    FooterComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,

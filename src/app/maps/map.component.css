@@ -1,0 +1,47 @@
+.bustxt {
+  margin-left: 1vh;
+  font-weight: 600;
+  }
+
+  .lastSeen {
+    margin-left: 4vh;
+  }
+
+  .titlePadding {
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:lightgray;
+  }
+
+  .moveRight {
+    float: right;
+  }
+
+  .topMargin {
+    margin-top: -2vh;
+  }
+
+  .textStyl {
+    color: grey;
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 4px;
+  }
+
+agm-map {
+    height: 70vh;
+    width: 205vh;
+}
+
+.iconsStyles {
+  float: right;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 1vh;
+  font-weight: 700;
+  margin-right: 1vh;
+}
+
+.textStyling {
+  color: black;
+  font-size: 10px;
+}

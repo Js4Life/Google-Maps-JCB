@@ -1,0 +1,43 @@
+<div class="movPosition">
+<agm-map [latitude]="lat" [longitude]="lng" (mapClick)="mapClicked($event)">
+    <agm-marker *ngFor="let m of markers; let i = index" (markerClick)="clickedMarker(m.label, i)" [latitude]="m.lat" [longitude]="m.lng"
+      [label]="m.label" [markerDraggable]="m.draggable" (dragEnd)="markerDragEnd(m, $event)" [iconUrl]="'../../assets/ActiveLT.png'">
+      <agm-info-window *ngFor="let item of infoWindow">
+        <div>
+          <img src="{{item.icon}}">
+          <span class="bustxt">{{item.busNo}}</span>
+        </div>
+        <div class="lastSeen">
+          <img src="{{item.mobileIcon}}">
+          <span class="textStyling">{{item.lastseen}}</span>
+        </div>
+        <hr>
+        <div>
+          <div>
+            <span class="titlePadding">{{item.status}}</span>
+            <span class="titlePadding moveRight">{{item.location}}</span>
+            <div class="textStyl">{{item.statusVal}}</div>
+            <div class="moveRight topMargin textStyl">{{item.locationVal}}</div>
+            <br>
+            <div>
+              <div class="titlePadding">{{item.speed}}</div>
+              <span class="titlePadding moveRight topMargin">{{item.Time}}</span>
+              <div class="textStyl">{{item.speedVal}}</div>
+              <div class="moveRight topMargin textStyl">{{item.TimeVal}}</div>
+
+            </div>
+          </div>
+        </div>
+        <div>
+        </div>
+        <a  style="font-size: 10px;color:rgb(0, 0, 255);cursor: pointer;text-decoration: underline;">View Details</a>
+      </agm-info-window>
+    </agm-marker>
+  </agm-map>
+  <div class="iconsStyles">
+      <span><img src="../../assets/ActiveLT.png" class="movingStyle">MOVING</span>
+      <span><img src="../../assets/InactiveLT.png" class="movingStyle">STOPPED</span>
+      <span><img src="../../assets/ActiveLT.png" class="movingStyle">STATIC</span>
+      <span><img src="../../assets/InactiveLT.png" class="movingStyle">UNKNOWN</span>
+    </div>
+  </div>

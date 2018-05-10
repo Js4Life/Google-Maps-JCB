@@ -21,8 +21,9 @@ color: blue;
 }
 
 .positionStyl {
-  margin-top: 2vh;
+  margin-top: 4vh;
   margin-left: 2vh;
+  position: absolute;
 }
 
 .listStyl {
@@ -33,9 +34,10 @@ color: blue;
 }
 
 .listPos {
+  margin-top: 4vh;
   margin-left: 2vh;
   padding: 2vh;
-  margin-top: -24vh;
+  /* margin-top: -24vh; */
 }
 
 .listCount {
@@ -120,9 +122,9 @@ agm-map  {
   margin-top: -5vh;
 }
 
-.busTrack {
+/* .busTrack {
   margin-top: -62vh;
-}
+} */
 
 .textStyling {
   color: black;

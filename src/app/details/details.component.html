@@ -1,8 +1,42 @@
+
 <div class="positionStyl">
+    <img src="../../assets/Search.png" class="searchIcon">
+    <input type="search" placeholder="Search Vehicles" class="searchStyl" style="width: 70%;">
+<div>
+  <div *ngIf="!Overview">
+        <div *ngFor="let item of MockData" class="listPos">
+        <div class="listStyl">{{item.title}}:<span style="font-weight: bold;">{{item.count}}</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="Overview" class="busTrack">
+      <div *ngFor="let val of AllVehicles">
+        <div class="busNo">{{val.title}}</div>
+        <div class="addrStyle">
+          <img src="../../assets/Location.png">{{val.location}}
+          <div>
+            <div class="city">{{val.city}}</div>
+            <a href="#" style="margin-left: 2vh;">View Details</a>
+            <div class="movingStyl">
+              <img src="{{val.icon}}" class="logoStyl">
+              <div class="logotitle">{{val.status | uppercase}}</div>
+            </div>
+            <div class="lineStyl"></div>
+          </div>
+        </div>
+
+
+<!-- <div class="positionStyl">
   <img src="../../assets/Search.png" class="searchIcon">
   <input type="search" placeholder="Search Vehicles" class="searchStyl" style="width: 12%;">
+  <div> -->
+      <!-- <div *ngFor="let item of MockData" class="listPos">
+        <div class="listStyl">{{item.title}}:<span style="font-weight: bold;">{{item.count}}</span></div>
+      </div>
+    </div> -->
 
-  <div class="positionMap">
+  <!-- <div class="positionMap">
     <agm-map [latitude]="lat" [longitude]="lng" (mapClick)="mapClicked($event)">
       <agm-marker *ngFor="let m of markers; let i = index" (markerClick)="clickedMarker(m.label, i)" [latitude]="m.lat" [longitude]="m.lng"
         [label]="m.label" [markerDraggable]="m.draggable" (dragEnd)="markerDragEnd(m, $event)" [iconUrl]="'../../assets/ActiveLT.png'">
@@ -44,34 +78,11 @@
       </agm-marker>
     </agm-map>
   </div>
-</div>
+</div> -->
 
 
-<div class="vl"></div>
+<!-- <div class="vl"></div> -->
 
-<div *ngIf="!Overview">
-  <div *ngFor="let item of MockData" class="listPos">
-    <div class="listStyl">{{item.title}}:<span style="font-weight: bold;">{{item.count}}</span></div>
-  </div>
-</div>
 
-<div *ngIf="Overview" class="busTrack">
-    <div class="iconsStyle">
-        <span><img src="../../assets/ActiveLT.png" class="movingStyle">MOVING</span>
-        <span><img src="../../assets/InactiveLT.png" class="movingStyle">STOPPED</span>
-      </div>
-  <div *ngFor="let val of AllVehicles">
-    <div class="busNo">{{val.title}}</div>
-    <div class="addrStyle">
-      <img src="../../assets/Location.png">{{val.location}}
-      <div>
-        <div class="city">{{val.city}}</div>
-        <a href="#" style="margin-left: 2vh;">View Details</a>
-        <div class="movingStyl">
-          <img src="{{val.icon}}" class="logoStyl">
-          <div class="logotitle">{{val.status | uppercase}}</div>
-        </div>
-        <div class="lineStyl"></div>
 
-      </div>
-    </div>
+

@@ -1,5 +1,11 @@
 
 <app-header (messageEvnt)="recieveEvent($event)"></app-header>
-<app-details [Overview]="toggle"></app-details>
+<!-- <app-details [Overview]="toggle"></app-details> -->
+
+<div>
+  <app-details [Overview]="toggle"></app-details>
+  <div class="movRight"> <app-map></app-map></div>
+</div>
+
 <app-footer></app-footer>
 

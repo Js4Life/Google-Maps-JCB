@@ -84,3 +84,9 @@ input {
   margin-left: 12vh;
 }
 
+
+.movRight {
+  margin-left: 53vh;
+  border: 1px solid grey;
+  margin-top: 0vh;
+}

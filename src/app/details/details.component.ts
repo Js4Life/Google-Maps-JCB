@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation,Input } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 import { AppRouteConfig } from '../app.router-config';
 import { Marker } from '../models/marker';
 import { MouseEvent } from '@agm/core';
