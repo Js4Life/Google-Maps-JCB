@@ -1,23 +1,29 @@
 <div class="bgImage">
 
-  <form class="bgStyl">
+  <form (ngSubmit)="loginUser()" [formGroup]="loginForm" novalidate class="bgStyl">
   <img src="../../assets/Logo.png" class="logo">
   <div class="welcomeStyl">WELCOME</div>
   <div class="helloStyle">
     Hello there! Sign in to manage your fleet from anywhere.
   </div>
     <div class="userStyl">
-        <input type="text" placeholder="Login Id">
+        <input formControlName="UserName" type="text" placeholder="Login Id" class='form-control'>
+        <div class="alert  alert-danger" *ngIf="loginForm.get('UserName').hasError('required') && loginForm.get('UserName').touched">
+            Email is required
+        </div>
     </div>
     <div class="passwdStyl">
-        <input type="password" placeholder="Password">
+        <input formControlName="Password" type="password" placeholder="Password" class='form-control'>
+        <div class="alert  alert-danger" *ngIf=" !loginForm.get('Password').valid && loginForm.get('UserName').touched">
+            Password is required and should less than 10 characters
+        </div>
     </div>
 
     <div class="forgtPasswd">
       Forgot Password?
     </div>
 
-    <button class="btn btn-primary" (click)="login()">Sign In</button>
+    <button [disabled]="loginForm.invalid" class="btn btn-primary">Sign In</button>
 
     <div class="footer">
       <span class="register">Don't have an account?</span>
@@ -25,6 +31,7 @@
     </div>
 
   </form>
-
+<!-- {{loginForm.value | json}}
+{{loginForm.status | json}} -->
 </div>
 

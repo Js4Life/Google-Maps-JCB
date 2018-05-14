@@ -4,11 +4,14 @@ import 'rxjs/add/operator/map';
 import { DOCUMENT } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
+import { environment} from '../../environments/environment';
 
 
 @Injectable()
 export class ServiceRequest implements OnInit {
   environment: any;
+
+  baseUrl: any = environment.BASE_URL;
   constructor(@Inject(DOCUMENT) private document: any, private http: Http, private router: Router) {
   }
 
@@ -63,8 +66,10 @@ export class ServiceRequest implements OnInit {
   }
 
 
-  Authentication() {
-    
+  Authentication(reqBody) {
+      return this.http.post(this.baseUrl + 'authentication', reqBody).map((res: Response) => {
+            return res.json();
+      });
   }
 
 }

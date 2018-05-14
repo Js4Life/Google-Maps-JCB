@@ -203,8 +203,8 @@ font-weight: 600;
 
 div.ex1 {
   background-color: #fff;
-  height: 632px;
-  width: 435px;
+  height: 83vh;
+  width: 51vh;
   overflow-y: auto;
   position: absolute;
 }
@@ -281,7 +281,7 @@ font-weight: 700;
 
 /* width */
 ::-webkit-scrollbar {
-  width: 2vh;
+  width: 1vh;
 }
 
 /* Track */

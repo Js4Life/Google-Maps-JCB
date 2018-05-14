@@ -21,6 +21,9 @@ import {MapComponent} from './maps/map.component';
 
 import { LoadingModule, ANIMATION_TYPES } from 'ngx-loading';
 
+// forms
+import {ReactiveFormsModule} from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +46,8 @@ import { LoadingModule, ANIMATION_TYPES } from 'ngx-loading';
       primaryColour: '#ffffff',
       secondaryColour: '#ffffff',
       tertiaryColour: '#ffffff'
-  })
+  }),
+  ReactiveFormsModule
   ],
   providers: [ServiceRequest, UtilService, AppRouteConfig],
   bootstrap: [AppComponent]
