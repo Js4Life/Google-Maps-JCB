@@ -122,9 +122,10 @@ agm-map  {
   margin-top: -5vh;
 }
 
-/* .busTrack {
-  margin-top: -62vh;
-} */
+.busTrack {
+  position: absolute;
+  /* margin-top: 10vh; */
+}
 
 .textStyling {
   color: black;
@@ -165,4 +166,135 @@ font-weight: 600;
   position: absolute;
   margin-left: 174vh;
   margin-top: 64vh;
+}
+
+.bstitle {
+  color: #2196F3;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.titleCs {
+  color:lightgray;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.iconStylz {
+  border-radius: 50%;
+  width: 20px;
+  margin-left: 1vh;
+}
+
+.marginRight {
+  margin-left: 2vh;
+  margin-top: 2vh;
+}
+.trip{
+  color: grey;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.txtstyle{
+  font-size: 12px;
+  color: black;
+}
+
+div.ex1 {
+  background-color: #fff;
+  height: 632px;
+  width: 435px;
+  overflow-y: auto;
+  position: absolute;
+}
+
+
+.logoStyle {
+  width: 15vh;
+  margin-left: 1vh;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+
+.headers {
+  margin-left: 15%;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.imgStyl {
+  width: 20px;
+  border-radius: 50%;
+}
+
+.titleStyle {
+  color: #0099CC;
+  font-size: 20px;
+  padding-right: 5vh;
+  font-weight: 600;
+}
+
+.logout {
+  float: right;
+  margin-right: 2vh;
+  margin-top: 3vh;
+}
+
+
+.logoutStyle {
+  width: 30px;
+}
+
+.titleStyling {
+  color: grey;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.userName {
+font-family: sans-serif;
+color: red;
+font-size: 15px;
+font-family: Arial, Helvetica, sans-serif;
+font-weight: 700;
+}
+
+.userProfile {
+  width: 30px;
+}
+
+.settingPos {
+  margin-left: 4vh;
+}
+
+.overview {
+  width: 100%;
+  background:  #0486c1;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 2vh;
+  /* font-weight: bold; */
+}
+
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 2vh;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

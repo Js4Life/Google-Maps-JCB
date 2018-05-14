@@ -9,10 +9,18 @@ import { MouseEvent } from '@agm/core';
   // encapsulation : ViewEncapsulation.None
 })
 export class DetailsComponent {
-  @Input() Overview: boolean = true;
+  @Input() Overview: any = {};
+  ViewDetails: boolean = false;
   lat: number = 51.678418;
   lng: number = 7.809007;
   location: any = {};
+
+  firstView:boolean = true;
+  search:boolean = true;
+  secondView: boolean;
+  thirdScreen:boolean=false;
+  hideHeadlines:boolean = true;
+
   markers: Marker[] = [
     {
       lat: 51.673858,
@@ -36,6 +44,54 @@ export class DetailsComponent {
   constructor(private goto: AppRouteConfig) {
 
    }
+
+
+   BusDetails = [{
+     'busNo' : 'Bus #8754',
+     'status' : 'On trip',
+     'busIcon' : '../../assets/icon.png',
+     'icon': '../../assets/Location.png',
+     'location': 'Pipeline West, Srinagar,Banashankari',
+     'city': 'Bengaluru,Karnataka 560026',
+     'BusIcon': '../../assets/icon.png',
+      'bustitle' : 'STATUS',
+      'busStatus': 'MOVING',
+      'navigationIcon': '../../assets/navigation.png',
+      'navig': 'DIRECTION',
+      'navigDirection': 'NW',
+      'durationIcon' : '../../assets/Duration.png',
+      'duratn': 'DURATION',
+      'duration': '1h 32m 03s',
+      'distanceTitle': 'DISTANCE',
+      'distanceIcon' : '../../assets/road.png',
+      'distance': '11km',
+      'chasisIcon': '../../assets/chassis.png',
+      'chasisTitle': 'Chassis number',
+      'engineIcon': '../../assets/engine.png',
+      'chasisNo' : '85743687568',
+      'engineTitle': 'Engine',
+      'Engine' : ' Running',
+      'speedIcon': '../../assets/speedometer.png',
+      'Speed' : '80 kmph',
+      'SpeedTitle' : 'SPEED',
+      'ACIcon': '../../assets/fan.png',
+      'AirConditionTitle': 'Air Condition',
+      'ACstatus': 'ON',
+      'FuelCons' : 'Fuel Consumption',
+      'FuelIcon': '../../assets/gas-level.png',
+      'Fuel': '25L Average',
+      'longIcon': '../../assets/speedometer.png',
+      'long': 'Longtitude',
+      'longVal': '77.67368732',
+      'lat': 'Latitude',
+      'latVal' : '12.987887',
+      'latIcon': '../../assets/speedometer.png',
+      'estimateIcon': '../../assets/speedometer.png',
+      'estimate1': 'Estimated time to',
+      'estimate2': ' reach Destination',
+      'estimateVal' : '11.00pm'
+   }];
+
 
   MockData = [{
     'title': 'Static or Unknown Vehicle Count',
@@ -92,6 +148,19 @@ export class DetailsComponent {
        'TimeVal' : '22mins',
     }];
 
+    heading = [{
+      'img': '../../assets/Fleet.png',
+      'title': 'Fleet'
+    },
+    {
+      'img': '../../assets/Alerts.png',
+      'title': 'Alert'
+    },
+    {
+      'img': '../../assets/Support.png',
+      'title': 'Support'
+    }];
+
   mapClicked($event: MouseEvent) {
     this.markers.push({
       lat: $event.coords.lat,
@@ -109,6 +178,37 @@ export class DetailsComponent {
     console.log('dragEnd', m, $event);
   }
 
+  showDetails() {
+    this.ViewDetails = true;
+    this.Overview = true;
+  }
 
+  overviewMethod() {
+    this.search = true;
+    this.firstView = true;
+    this.secondView = false;
+    this.thirdScreen = false;
+    this.hideHeadlines = false;
+  }
 
+  allvehicle() {
+    this.search = true;
+    this.secondView = true;
+    this.firstView = false;
+    this.thirdScreen = false;
+    this.hideHeadlines = true;
+  }
+
+  livetracking() {
+    this.thirdScreen = true;
+    this.search = false;
+    this.firstView = false;
+    this.secondView = false;
+    this.hideHeadlines = true;
+  }
+
+  ngOnInit() {
+    console.log('input data', this.Overview);
+  }
 }
+

@@ -7,7 +7,7 @@ import {ServiceRequest} from './services/base.http.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
+  loading:boolean = false;
   constructor (private httpSvc: ServiceRequest) {}
 
   ngOnInit() {

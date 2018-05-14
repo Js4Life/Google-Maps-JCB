@@ -13,10 +13,13 @@ import {AppRouteConfig} from './app.router-config';
 // http Svc
 import { HttpModule } from '@angular/http';
 import {ServiceRequest} from './services/base.http.service';
+import { UtilService} from './services/util.service';
 
 // Google Maps
 import { AgmCoreModule } from '@agm/core';
 import {MapComponent} from './maps/map.component';
+
+import { LoadingModule, ANIMATION_TYPES } from 'ngx-loading';
 
 @NgModule({
   declarations: [
@@ -32,9 +35,17 @@ import {MapComponent} from './maps/map.component';
     BrowserModule,
     AppRouting,
     HttpModule,
-    AgmCoreModule.forRoot({apiKey: 'AIzaSyC0_D5WKsaUUnYv9q2AIGwFykqHGVinIlI'})
+    AgmCoreModule.forRoot({apiKey: 'AIzaSyC0_D5WKsaUUnYv9q2AIGwFykqHGVinIlI'}),
+    LoadingModule.forRoot({
+      animationType: ANIMATION_TYPES.wanderingCubes,
+      backdropBackgroundColour: 'rgba(0,0,0,0.1)',
+      backdropBorderRadius: '4px',
+      primaryColour: '#ffffff',
+      secondaryColour: '#ffffff',
+      tertiaryColour: '#ffffff'
+  })
   ],
-  providers: [ServiceRequest, AppRouteConfig],
+  providers: [ServiceRequest, UtilService, AppRouteConfig],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

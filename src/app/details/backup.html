@@ -1,0 +1,336 @@
+<!-- <app-header></app-header> -->
+
+<div class="mycontainer">
+  <nav>
+    <span>
+      <img src="../../assets/Logo.png" class="logoStyle">
+    </span>
+    <span class="headers">
+      <span *ngFor="let label of heading">
+        <span>
+          <img src="{{label.img}}" class="imgStyl">
+        </span>
+        <span class="titleStyle">&nbsp;{{label.title}}</span>
+      </span>
+    </span>
+    <span class="logout">
+      <span class="titleStyling">Hello,</span>
+      <span class="userName">Nick</span>
+      <span>
+        <img src="../../assets/Bus.png" class="userProfile">
+      </span>
+      <span class="settingPos">
+        <img src="../../assets/settings.png" class="logoutStyle">
+      </span>
+    </span>
+  </nav>
+
+  <div class="overview">
+    <span style="cursor: pointer;" (click)="overviewMethod()">OVERVIEW</span>&nbsp;&nbsp;&nbsp;&nbsp;|
+    <span style="cursor: pointer;font-weight: bold;" (click)="allvehicle()">&nbsp;&nbsp;&nbsp;&nbsp;ALL VEHICLES</span>
+    <span *ngIf="hideHeadlines">
+    <span style="cursor: pointer;font-weight: bold;margin-left: 6vh;" (click)="livetracking()">LIVE TRACKING</span>
+    <span style="margin-left: 4vh;">DATA ANALYTICS</span>
+    <span style="margin-left: 4vh;">ALERTS</span>
+    <span style="margin-left: 4vh;">HISTORY</span>
+    <span style="margin-left: 4vh;">GEO-FENCING</span>
+  </span>
+  </div>
+</div>
+
+<div *ngIf="search">
+  <div class="positionStyl">
+    <img src="../../assets/Search.png" class="searchIcon">
+    <input type="search" placeholder="Search Vehicles" class="searchStyl" style="width: 70%;">
+    <div>
+</div>
+    <!-- Vehicle count -->
+    <div *ngIf="firstView && search">
+      <div *ngFor="let item of MockData" class="listPos">
+        <div class="listStyl">{{item.title}}:
+          <span style="font-weight: bold;">{{item.count}}</span>
+        </div>
+      </div>
+    </div>
+
+
+  <!-- All Vehicles -->
+<div *ngIf="secondView" class="busTrack">
+    <div *ngFor="let val of AllVehicles">
+      <div class="busNo">{{val.title}}</div>
+        <div class="addrStyle">
+          <img src="../../assets/Location.png">{{val.location}}
+            <div>
+              <div class="city">{{val.city}}</div>
+                <a href="#" style="margin-left: 2vh;">View Details</a>
+                  <div class="movingStyl">
+                    <img src="{{val.icon}}" class="logoStyl">
+                      <div class="logotitle">{{val.status | uppercase}}</div>
+                        </div>
+                           <div class="lineStyl"></div>
+                             </div>
+                              </div>
+                                </div>
+                            </div>
+
+<span *ngIf="thirdScreen">Hello</span>
+
+    <!-- <div *ngIf="thirdView" class="ex1">
+
+        <div *ngFor="let vl of BusDetails">
+
+            <div class="marginRight">
+                <span class="bstitle">{{vl.busNo}}</span>
+                <img src="{{vl.busIcon}}" class="iconStylz">
+              </div>
+
+              <div class="trip marginRight">{{vl.status}}</div>
+
+             <div>
+                <div>
+                     <div  class="titleCs"><img src="{{vl.icon}}"class="iconStylz">{{vl.location}}</div>
+                      <div class="titleCs" style="margin-left: 4vh;">{{vl.city}}</div>
+                </div>
+              </div>
+              <hr>
+
+              <div style="margin-left: 2vh;">
+                <img src="../../assets/icon.png" class="iconStylz">
+                <span style="margin-left: 2vh;color: grey;font-family: Arial, Helvetica, sans-serif;font-size: 12px;">{{vl.bustitle}}</span>
+                <img src="../../assets/navigation.png" class="iconStylz" style="margin-left: 2vh;">
+                <span style="margin-left: 1vh;color: grey;font-family: Arial, Helvetica, sans-serif;font-size: 12px;">{{vl.navig}}</span>
+                <div>
+                  <span class="txtstyle" style="margin-left: 6vh;padding: 1vh;">{{vl.busStatus}}</span>
+                  <span class="txtstyle" style="margin-left: 5vh;padding: 1vh;">{{vl.navigDirection}}</span>
+                </div>
+              </div>
+
+              <div  style="margin-left: 2vh;">
+                  <img src="{{vl.durationIcon}}" class="iconStylz">
+                  <span style="margin-left: 1vh;color: grey;font-family: Arial, Helvetica, sans-serif;font-size: 12px;">{{vl.duratn}}</span>
+                  <img src="{{vl.distanceIcon}}" class="iconStylz">
+                  <span  style="margin-left: 1vh;color: grey;font-family: Arial, Helvetica, sans-serif;font-size: 12px;">{{vl.distanceTitle}}</span>
+                  <div>
+                    <span class="txtstyle" style="margin-left: 6vh">{{vl.duration}}</span>
+                    <span class="txtstyle" style="margin-left: 7vh">{{vl.distance}}</span>
+                  </div>
+              </div>
+              <hr/>
+
+              <div class="marginRight">
+                <div>
+                  <img src="{{vl.chasisIcon}}" class="iconStylz">
+                  <span class="txtstyle">{{vl.chasisTitle}}</span>
+                  <span class="txtstyle"  style="margin-left: 7vh">{{vl.chasisNo}}</span>
+                </div>
+                <hr/>
+              </div>
+              <div>
+
+                  <div class="marginRight">
+                      <div>
+                        <img src="{{vl.engineIcon}}" class="iconStylz">
+                        <span class="txtstyle">{{vl.engineTitle}}</span>
+                        <span class="txtstyle"  style="margin-left: 14vh">{{vl.Engine}}</span>
+                      </div>
+                      <hr/>
+                    </div>
+                    <div>
+
+                  <div class="marginRight">
+                    <img src="{{vl.speedIcon}}"  class="iconStylz">
+                    <span class="txtstyle">{{vl.SpeedTitle}}</span>
+                    <span class="txtstyle"  style="margin-left: 14vh">{{vl.Speed}}</span>
+                  </div>
+                  <hr/>
+                </div>
+
+                <div class="marginRight">
+                    <div>
+                      <img src="{{vl.ACIcon}}" class="iconStylz">
+                      <span class="txtstyle">{{vl.AirConditionTitle}}</span>
+                      <span class="txtstyle"  style="margin-left: 12vh">{{vl.ACstatus}}</span>
+                    </div>
+                    <hr/>
+                  </div>
+                  <div class="marginRight">
+                      <div>
+                        <img src="{{vl.FuelIcon}}" class="iconStylz">
+                        <span  class="txtstyle">{{vl.FuelCons}}</span>
+                        <span  class="txtstyle"  style="margin-left: 6vh">{{vl.Fuel}}</span>
+                      </div>
+                      <hr/>
+                    </div>
+
+                    <div class="marginRight">
+                        <div>
+                          <img src="{{vl.chasisIcon}}" class="iconStylz">
+                          <span class="txtstyle">{{vl.long}}</span>
+                          <span class="txtstyle"  style="margin-left: 12vh">{{vl.longVal}}</span>
+                        </div>
+                        <hr/>
+                      </div>
+                      <div>
+
+                          <div class="marginRight">
+                            <img src="{{vl.chasisIcon}}" class="iconStylz">
+                            <span class="txtstyle">{{vl.lat}}</span>
+                            <span  class="txtstyle" style="margin-left: 12vh">{{vl.latVal}}</span>
+                          </div>
+                          <hr/>
+                        </div>
+
+                        <div  class="marginRight">
+                            <div>
+                              <img src="{{vl.chasisIcon}}" class="iconStylz">
+                              <span  class="txtstyle">{{vl.estimate1}}</span>
+                              <span class="txtstyle" style="margin-left: 7vh">{{vl.estimateVal}}</span>
+                            </div>
+                            <hr/>
+                          </div>
+        </div>
+    </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- View Details -->
+
+
+    <!-- All Vehicles -->
+
+
+    <!-- <div *ngIf="!Overview">
+        <div *ngFor="let item of MockData" class="listPos">
+        <div class="listStyl">{{item.title}}:<span style="font-weight: bold;">{{item.count}}</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="position: absolute;">
+      <div *ngFor="let vl of BusDetails">
+          <div>
+              <span>{{vl.busNo}}</span>
+              <img src="{{vl.busIcon}}">
+            </div>
+      </div>
+  </div> -->
+
+
+    <!-- <div *ngFor="let vl of BusDetails">
+
+      <span>
+        <span>{{vl.busNo}}</span>
+        <img src="{{vl.busIcon}}">
+      </span>
+
+      <div>{{vl.status}}</div>
+
+      <div>
+        <div>
+          <img src="{{vl.icon}}">
+          <div>{{vl.location}}</div>
+          <div>{{vl.city}}</div>
+        </div>
+      </div>
+
+    </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div class="positionStyl">
+  <img src="../../assets/Search.png" class="searchIcon">
+  <input type="search" placeholder="Search Vehicles" class="searchStyl" style="width: 12%;">
+  <div> -->
+    <!-- <div *ngFor="let item of MockData" class="listPos">
+        <div class="listStyl">{{item.title}}:<span style="font-weight: bold;">{{item.count}}</span></div>
+      </div>
+    </div> -->
+
+    <!-- <div class="positionMap">
+    <agm-map [latitude]="lat" [longitude]="lng" (mapClick)="mapClicked($event)">
+      <agm-marker *ngFor="let m of markers; let i = index" (markerClick)="clickedMarker(m.label, i)" [latitude]="m.lat" [longitude]="m.lng"
+        [label]="m.label" [markerDraggable]="m.draggable" (dragEnd)="markerDragEnd(m, $event)" [iconUrl]="'../../assets/ActiveLT.png'">
+        <agm-info-window *ngFor="let item of infoWindow">
+          <div>
+            <img src="{{item.icon}}">
+            <span class="bustxt">{{item.busNo}}</span>
+          </div>
+          <div class="lastSeen">
+            <img src="{{item.mobileIcon}}">
+            <span class="textStyling">{{item.lastseen}}</span>
+          </div>
+          <hr>
+
+          <div>
+
+            <div>
+              <span class="titlePadding">{{item.status}}</span>
+              <span class="titlePadding moveRight">{{item.location}}</span>
+              <div class="textStyl">{{item.statusVal}}</div>
+              <div class="moveRight topMargin textStyl">{{item.locationVal}}</div>
+              <br>
+              <div>
+                <div class="titlePadding">{{item.speed}}</div>
+                <span class="titlePadding moveRight topMargin">{{item.Time}}</span>
+                <div class="textStyl">{{item.speedVal}}</div>
+                <div class="moveRight topMargin textStyl">{{item.TimeVal}}</div>
+
+              </div>
+            </div>
+          </div>
+          <div>
+          </div>
+          <a  style="font-size: 10px;color:rgb(0, 0, 255);cursor: pointer;text-decoration: underline;">View Details</a>
+        </agm-info-window>
+
+
+
+      </agm-marker>
+    </agm-map>
+  </div>
+</div> -->
+
+
+    <!-- <div class="vl"></div> -->
